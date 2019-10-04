@@ -1,18 +1,26 @@
 <template>
   <div>
+    <h3>Select two blackhearts</h3>
     <ul>
-        <li v-for="blackheart in blackhearts" v-bind:key="blackheart">
-            <input type="checkbox" :id="blackheart" :value="blackheart" v-model="checkedNames" 
-                :disabled="checkedNames.length > 1 && !checkedNames.includes(blackheart)">
-            <label :for="blackheart">{{blackheart}}</label>
+        <li v-for="blackheart in blackhearts" v-bind:key="blackheart.name">
+            <input type="checkbox" :id="blackheart.name" :value="blackheart.name" v-model="checkedNames" 
+                :disabled="checkedNames.length > 1 && !checkedNames.includes(blackheart.name)">
+            <label :for="blackheart.name">{{blackheart.name}}</label>
         </li>
-        <div v-html="fanfiction[0].text"></div>
+    </ul>
+
+    <h3>Select which tropes to use</h3>
+    <ul>
+        <li v-for="trope in tropes" v-bind:key="trope">
+            <input type="checkbox" :id="trope" :value="trope" v-model="checkedTropes">
+            <label :for="trope">{{trope}}</label>
+        </li>
     </ul>
   </div>
 </template>
 
 <script>
-import fanfiction from "../assets/fics";
+import data from "../assets/data";
 
 export default {
   name: 'Home',
@@ -21,9 +29,10 @@ export default {
   },
   data: function () {
     return {
-      fanfiction: fanfiction.list,
-      blackhearts: ['Beth', 'Billie', 'Cass', 'Emma', 'Garvey' ],
-      checkedNames: []
+      tropes: data.tropes,
+      blackhearts: data.blackhearts,
+      checkedNames: [],
+      checkedTropes: []
     }
   }
 }
