@@ -16,6 +16,8 @@
             <label :for="trope">{{trope}}</label>
         </li>
     </ul>
+
+    <h3>Our story goes as follows....</h3>
   </div>
 </template>
 
