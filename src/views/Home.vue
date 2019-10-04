@@ -11,9 +11,9 @@
 
     <h3>Select which tropes to use</h3>
     <ul>
-        <li v-for="trope in tropes" v-bind:key="trope">
-            <input type="checkbox" :id="trope" :value="trope" v-model="checkedTropes">
-            <label :for="trope">{{trope}}</label>
+        <li v-for="trope in tropes" v-bind:key="trope.type">
+            <input type="checkbox" :id="trope.type" :value="trope.type" v-model="checkedTropes">
+            <label :for="trope.type">{{trope.type}}</label>
         </li>
     </ul>
 
