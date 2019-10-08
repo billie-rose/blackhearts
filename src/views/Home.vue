@@ -79,6 +79,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  .container {
+    background: 	rgb(255,255,255,.30)
+  }
+
   .profile-pic {
     margin: 10px;
     cursor: pointer;
