@@ -5,7 +5,7 @@ export default {
         { type: 'Coffeeshop AU', order: 0, text: 'this story takes place in a super gay coffee shop', textAmbiguous: 'this story takes place in a super gay coffee shop' },
         { type: 'Enemies to Lovers', order: 2, text: '{0} and {1} hate each other but can\'t help falling in love', textAmbiguous: 'they hate each other but can\'t help falling in love' },
         { type: 'Fake Dating', order: 1, text: '{0} and {1} are pretending to date', textAmbiguous: 'they\'re pretending to date' },
-        { type: 'Mutual Pining , Oblivious Idiots', order: 1, text: '{0} and {1} are totally in love but neither of them know it or will admit it', textAmbiguous: 'they\'re totally in love but neither of them know it or will admit it' },
+        { type: 'Mutual Pining/Oblivious Idiots', order: 1, text: '{0} and {1} are totally in love but neither of them know it or will admit it', textAmbiguous: 'they\'re totally in love but neither of them know it or will admit it' },
         { type: 'Slow Burn', order: 2, text: 'it takes approximately 1000 years but {0} and {1} eventually stop being oblivious idiots', textAmbiguous: 'it takes approximately 1000 years but they eventually stop being oblivious idiots' },
     ].sort(),
     blackhearts: [ 

@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h3>Select two blackhearts</h3>
+    <h3>Select two blackhearts or <span v-on:click="randomize()" class="btn btn-primary">randomize</span> / <span v-on:click="reset()" class="btn btn-danger">reset</span></h3>
     <div class="row">
       <div class="col-xs-2" v-for="blackheart in blackhearts" v-bind:key="blackheart.name">
           <input style="display:none" type="checkbox" :id="blackheart.name" :value="blackheart.name" v-model="checkedNames" 
@@ -15,20 +15,23 @@
       </div>
     </div>
 
-    <span v-if="checkedNames.length == 2">
+    <span v-if="checkedNames.length >= 2">
       <h3>Select which tropes to use</h3>
-      <ul>
-          <li v-for="trope in tropes" v-bind:key="trope.type">
-              <input type="checkbox" :id="trope.type" :value="trope" v-model="checkedTropes">
-              <label :for="trope.type">{{trope.type}}</label>
-          </li>
-      </ul>
+      <div class="row">
+        <div v-for="trope in tropes" v-bind:key="trope.type" >
+          <input style="display:none" type="checkbox" :id="trope.type" :value="trope" v-model="checkedTropes">
+          <label :for="trope.type">
+            <span class="btn btn-primary" :class="{selectedTrope: checkedTropes.includes(trope)}">{{trope.type}}</span>
+          </label>
+        </div>
+      </div>
+
+      <span v-if="checkedTropes.length > 0">
+        <h3>Our story goes as follows...</h3>
+        <p v-text="getStory()" />
+      </span>
     </span>
 
-    <span v-if="checkedTropes.length > 0">
-      <h3>Our story goes as follows....</h3>
-      <p v-text="getStory()" />
-    </span>
   </div>
 </template>
 
@@ -57,6 +60,18 @@ export default {
                   .map((trope, i) => i % 2 == 0 ? trope.text.format(this.checkedNames[0], this.checkedNames[1]) : trope.textAmbiguous)
                   .join(', and ');
       return story.charAt(0).toUpperCase() + story.slice(1) + '.';
+    },
+    reset() {
+      this.checkedNames = [];
+      this.checkedTropes = [];
+    },
+    randomize() {
+      this.reset();
+      var shuffledBlackhearts = [...this.blackhearts].map(blackheart => blackheart.name).sort(() => 0.5 - Math.random());
+      this.checkedNames = shuffledBlackhearts.slice(0, 2);
+
+      var shuffledTropes = [...this.tropes].sort(() => 0.5 - Math.random());
+      this.checkedTropes = shuffledTropes.slice(0, Math.floor(Math.random() * this.tropes.length) + 1  );
     }
   }
 }
@@ -66,15 +81,23 @@ export default {
 <style scoped>
   .profile-pic {
     margin: 10px;
+    cursor: pointer;
   }
   .selected {
     outline-style: solid;
     outline-color: #4CAF50;
     outline-width: 5px;
   }
-
   .greyed {
     opacity: 0.4;
     filter: alpha(opacity=40);
+    cursor: not-allowed;
+  }
+  .selectedTrope {
+    background-color: #4CAF50;
+  }
+  .btn { 
+    margin: 5px;
+    cursor: pointer;
   }
 </style>
