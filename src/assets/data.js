@@ -2,11 +2,13 @@ export default {
     tropes: [
         { type: 'Bed-sharing', order: 1, text: '{0} and {1} are stuck sharing a bed', textAmbiguous: 'they\'re stuck sharing a bed'  },
         { type: 'Body Swap', order: 1, text: '{0}\'s and {1}\'s bodies have been swapped', textAmbiguous: 'their bodies have been swapped' },
-        { type: 'Coffeeshop AU', order: 0, text: 'this story takes place in a super gay coffee shop', textAmbiguous: 'this story takes place in a super gay coffee shop' },
+        { type: 'Coffeeshop AU', order: 0, text: 'this story mostly takes place in a super gay coffee shop', textAmbiguous: 'this story mostly takes place in a super gay coffee shop' },
         { type: 'Enemies to Lovers', order: 2, text: '{0} and {1} hate each other but can\'t help falling in love', textAmbiguous: 'they hate each other but can\'t help falling in love' },
         { type: 'Fake Dating', order: 1, text: '{0} and {1} are pretending to date', textAmbiguous: 'they\'re pretending to date' },
         { type: 'Mutual Pining/Oblivious Idiots', order: 1, text: '{0} and {1} are totally in love but neither of them know it or will admit it', textAmbiguous: 'they\'re totally in love but neither of them know it or will admit it' },
         { type: 'Slow Burn', order: 2, text: 'it takes approximately 1000 years but {0} and {1} eventually stop being oblivious idiots', textAmbiguous: 'it takes approximately 1000 years but they eventually stop being oblivious idiots' },
+		{ type: 'Tattoo Artist AU', order: 0, text: '{0} is the tattoo artist for {1}', textAmbiguous: '{1} is the tattoo artist for {0}' },
+		{ type: 'Florist AU', order: 0, text: '{1} is the florist for {0}', textAmbiguous: '{0} is the tattoo artist for {1}' },
     ].sort(),
     blackhearts: [ 
         { name: 'Amanda', pronouns: 'they,them,theirs' }, 
