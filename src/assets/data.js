@@ -8,7 +8,7 @@ export default {
         { type: 'Mutual Pining/Oblivious Idiots', order: 1, text: '{0} and {1} are totally in love but neither of them know it or will admit it', textAmbiguous: 'they\'re totally in love but neither of them know it or will admit it' },
         { type: 'Slow Burn', order: 2, text: 'it takes approximately 1000 years but {0} and {1} eventually stop being oblivious idiots', textAmbiguous: 'it takes approximately 1000 years but they eventually stop being oblivious idiots' },
 		{ type: 'Tattoo Artist AU', order: 0, text: '{0} is the tattoo artist for {1}', textAmbiguous: '{1} is the tattoo artist for {0}' },
-		{ type: 'Florist AU', order: 0, text: '{1} is the florist for {0}', textAmbiguous: '{0} is the tattoo artist for {1}' },
+		{ type: 'Florist AU', order: 0, text: '{1} is the florist for {0}', textAmbiguous: '{0} is the florist artist for {1}' },
     ].sort(function(a, b) {
 		return a.type > b.type ? 1 : b.type > a.type ? -1 : 0
 	}),

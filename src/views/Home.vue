@@ -57,7 +57,7 @@ export default {
     },
     getStory() {
       var story = [...this.checkedTropes].sort((a, b) => a.order - b.order)
-                  .map((trope, i) => i % 2 == 0 ? trope.text.format(this.checkedNames[0], this.checkedNames[1]) : trope.textAmbiguous)
+                  .map((trope, i) => i % 2 == 0 ? trope.text.format(this.checkedNames[0], this.checkedNames[1]) : trope.textAmbiguous.format(this.checkedNames[0], this.checkedNames[1]))
                   .join(', and ');
       return story.charAt(0).toUpperCase() + story.slice(1) + '.';
     },
