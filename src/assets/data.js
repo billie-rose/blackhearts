@@ -9,7 +9,9 @@ export default {
         { type: 'Slow Burn', order: 2, text: 'it takes approximately 1000 years but {0} and {1} eventually stop being oblivious idiots', textAmbiguous: 'it takes approximately 1000 years but they eventually stop being oblivious idiots' },
 		{ type: 'Tattoo Artist AU', order: 0, text: '{0} is the tattoo artist for {1}', textAmbiguous: '{1} is the tattoo artist for {0}' },
 		{ type: 'Florist AU', order: 0, text: '{1} is the florist for {0}', textAmbiguous: '{0} is the tattoo artist for {1}' },
-    ].sort(),
+    ].sort(function(a, b) {
+		return a.type > b.type ? 1 : b.type > a.type ? -1 : 0
+	}),
     blackhearts: [ 
         { name: 'Amanda', pronouns: 'they,them,theirs' }, 
         { name: 'Beth', pronouns: 'she,her,hers' }, 
